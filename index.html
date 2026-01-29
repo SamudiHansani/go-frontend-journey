@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+    <title>Go Frontend Journey</title>
+    <meta charset="utf-8" />
+    <script src="wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+    <script>
+        function runJSBenchmark() {
+            const start = performance.now();
+            let sum = 0;
+            for (let i = 0; i < 100000000; i++) {
+                sum += i;
+            }
+            const end = performance.now();
+
+            console.log("Calculation result:", sum);
+            console.log(`Time taken in Pure JS: ${(end - start).toFixed(4)}ms`);
+        }
+
+        // Run it after a short delay to ensure WASM has logged its result first
+        setTimeout(runJSBenchmark, 1000);
+    </script>
+</head>
+
+<body></body>
+
+</html>
