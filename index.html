@@ -11,7 +11,7 @@
             go.run(result.instance);
         });
     </script>
-    <script>
+    <!-- <script>
         function runJSBenchmark() {
             const start = performance.now();
             let sum = 0;
@@ -26,9 +26,12 @@
 
         // Run it after a short delay to ensure WASM has logged its result first
         setTimeout(runJSBenchmark, 1000);
-    </script>
+    </script> -->
 </head>
 
-<body></body>
+<body>
+    <h1 id="main-heading">Waiting for Go...</h1>
+    <button onclick="myGoButtonHandler()">Click Me, I'm Go-powered!</button>
+</body>
 
 </html>
