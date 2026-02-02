@@ -30,8 +30,15 @@
 </head>
 
 <body>
-    <h1 id="main-heading">Waiting for Go...</h1>
-    <button onclick="myGoButtonHandler()">Click Me, I'm Go-powered!</button>
+    <!-- <h1 id="main-heading">Waiting for Go...</h1>
+    <button onclick="myGoButtonHandler()">Click Me, I'm Go-powered!</button> -->
+
+    <h1 id="main-heading">WASM Input Test</h1>
+
+    <input type="text" id="user-name" placeholder="Enter your name...">
+    <button onclick="processInputInGo()">Send to Go</button>
+
+    <p id="response-text"></p>
 </body>
 
 </html>
